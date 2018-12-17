@@ -15,7 +15,7 @@ public class ConsecutiveSumBest {
     {
         int [] returnArray;
         if(number % 2 == 1)
-            returnArray = seriesFromXtoY((int) Math.floor(number/ 2), (int) Math.ceil(number/2));
+            returnArray = seriesFromXtoY((number -1)/2, (number+1)/2);
         else{
             number = number * 2;
             int powerOf2 = 0;
@@ -62,7 +62,7 @@ public class ConsecutiveSumBest {
     {
         int [] returnArray = new int[y - x + 1];
         for(int i = x; i <= y; i++)
-            returnArray[i-x] = x;
+            returnArray[i-x] = i;
         return(returnArray);
     }
 }
