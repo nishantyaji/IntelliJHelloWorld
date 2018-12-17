@@ -14,11 +14,8 @@ public class ConsecutiveSumBest {
     public static int [] findSeries(int number)
     {
         int [] returnArray;
-        if(number % 2 == 1) {
-            returnArray = new int[2];
-            returnArray[0] = (int) Math.floor(number/ 2);
-            returnArray[1] = (int) Math.ceil(number/2);
-        }
+        if(number % 2 == 1)
+            returnArray = seriesFromXtoY((int) Math.floor(number/ 2), (int) Math.ceil(number/2));
         else{
             number = number * 2;
             int powerOf2 = 0;
@@ -38,16 +35,12 @@ public class ConsecutiveSumBest {
                 {
                     int n = (powerOf2Contribution + number - 1) / 2;
                     int r = n - powerOf2Contribution;
-                    returnArray = new int[n-r];
-                    for(int i = r+1; i <= n; i++)
-                        returnArray[i-(r+1)] = i;
+                    returnArray = seriesFromXtoY(r+1,n);
                 }
                 else{
                     int n = (oddPrimeLeast + (powerOf2Contribution * number / oddPrimeLeast) - 1)/2;
                     int r = n - oddPrimeLeast;
-                    returnArray = new int[n-r];
-                    for(int i = r+1; i <= n; i++)
-                        returnArray[i-(r+1)] = i;
+                    returnArray = seriesFromXtoY(r+1, n);
                 }
             }
         }
@@ -63,5 +56,13 @@ public class ConsecutiveSumBest {
             }
         }
         return(number);
+    }
+
+    private static int [] seriesFromXtoY(int x, int y)
+    {
+        int [] returnArray = new int[y - x + 1];
+        for(int i = x; i <= y; i++)
+            returnArray[i-x] = x;
+        return(returnArray);
     }
 }
