@@ -1,5 +1,24 @@
 import java.util.Arrays;
 
+/**
+ * A number can be written as sum of consecutive positive integers.
+ * Find out the shortest possible such sequence of numbers.
+ * The sequence should be of length more than 1
+ *
+ * Consider the number 15
+ * It can be written as sum of consecutive integers in 3 different ways
+ * 1+2+3+4+5
+ * 4+5+6
+ * 7+8
+ * Among these different way, the desired way is 7+8
+ *
+ * For any given positive number, find out the shortest possible sequence
+ * of consecutive numbers that can be added to result in the given number
+ * Can all positive numbers be represented as sum of consecutive numbers
+ *
+ * (Source: Job interview)
+ *
+ */
 public class ConsecutiveSumBest {
     public static void main(String[] args) {
         int inputNum  = 14267488;
@@ -15,7 +34,7 @@ public class ConsecutiveSumBest {
     {
         int [] returnArray;
         if(number % 2 == 1)
-            returnArray = seriesFromXtoY((number -1)/2, (number+1)/2);
+            returnArray = seriesFromXtoY((number-1)/2, (number+1)/2);
         else{
             number = number * 2;
             int powerOf2 = 0;
