@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.stream.IntStream;
 
 /**
  * A number can be written as sum of consecutive positive integers.
@@ -79,9 +80,7 @@ public class ConsecutiveSumBest {
 
     private static int [] seriesFromXtoY(int x, int y)
     {
-        int [] returnArray = new int[y - x + 1];
-        for(int i = x; i <= y; i++)
-            returnArray[i-x] = i;
-        return(returnArray);
+        // both x and y are included in the series
+        return IntStream.range(x, y+1).toArray();
     }
 }
