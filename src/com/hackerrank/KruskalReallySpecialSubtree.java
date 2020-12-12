@@ -1,13 +1,14 @@
 package com.hackerrank;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class KruskalReallySpecialSubtree {
     public static void main(String[] args) {
-
+        int gNodes=3;
+        List<Integer> gFrom = Arrays.asList(1, 2, 3);
+        List<Integer> gTo = Arrays.asList(2, 3, 1);
+        List<Integer> gWeight = Arrays.asList(2, 3, 5);
+        kruskals(gNodes, gFrom, gTo, gWeight);
     }
 
     /*
@@ -66,6 +67,7 @@ public class KruskalReallySpecialSubtree {
                 sumOfEdges += edge.weight;
             }
         }
+        System.out.println(sumOfEdges);
         return sumOfEdges;
     }
 }
