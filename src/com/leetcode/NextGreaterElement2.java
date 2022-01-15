@@ -4,9 +4,9 @@ import javafx.util.Pair;
 
 import java.util.Stack;
 
-public class NextGreaterElement3 {
+public class NextGreaterElement2 {
     public static void main(String[] args) {
-        NextGreaterElement3 n = new NextGreaterElement3();
+        NextGreaterElement2 n = new NextGreaterElement2();
         displayArray(n.nextGreaterElements(new int[]{1, 2, 1}));
         displayArray(n.nextGreaterElements(new int[]{1, 2, 3, 4, 3}));
     }
